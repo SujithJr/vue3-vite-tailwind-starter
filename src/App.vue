@@ -1,7 +1,7 @@
 <template>
-    <div class="h-screen text-center mt-32">
+    <div class="h-screen text-center pt-32 bg-gray-900">
         <img src="./assets/logo.png" alt="Vue" class="inline-block" />
-        <h1 class="text-4xl text-gray-700 font-medium mt-8">Vue + Vite + TailwindCss</h1>
+        <h1 class="text-4xl text-gray-400 font-medium mt-8">Vue + Vite + TailwindCss</h1>
     </div>
 </template>
 
