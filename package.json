@@ -1,5 +1,5 @@
 {
-    "name": "max-loader",
+    "name": "vue3-vite-tailwind-starter",
     "version": "0.0.0",
     "scripts": {
         "dev": "vite",
