@@ -1,6 +1,8 @@
 # Vue 3 + Vite + Tailwind CSS + Theme Switcher
 
-<img width="904" alt="image" src="https://github.com/SujithJr/vue3-vite-tailwind-starter/assets/29048470/d3388890-ff2b-499e-9134-03aebc196f4c">
+[<img width="904" alt="image" src="https://github.com/SujithJr/vue3-vite-tailwind-starter/assets/29048470/d3388890-ff2b-499e-9134-03aebc196f4c">](https://vue3-vite-tailwind-theme-switcher.netlify.app/)
+
+Preview: [Vue 3 + Vite + Tailwind CSS + Theme Switcher](https://vue3-vite-tailwind-theme-switcher.netlify.app/)
 
 This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
