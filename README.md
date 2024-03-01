@@ -44,17 +44,19 @@ No need to mention `dark:text-gray-100` class in every place to support tailwind
 
 `tailwind.config.js`
 ```js
-darkMode: 'class',
-theme: {
-    ...
-    extend: {
-        colors: {
-            primary: 'rgba(var(--color-primary), <alpha-value>)',
-            body: 'rgba(var(--color-body), <alpha-value>)',
+export default {
+    darkMode: 'class',
+    theme: {
+        ...
+        extend: {
+            colors: {
+                primary: 'rgba(var(--color-primary), <alpha-value>)',
+                body: 'rgba(var(--color-body), <alpha-value>)',
+            }
         }
+        ...
     }
-    ...
-},
+}
 ```
 
 ```html
