@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Lato:wght@100;300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+        --light-theme-primary: 230, 230, 230;
+		--light-theme-body: 59, 59, 59;
+
+		--dark-theme-primary: 37, 38, 39;
+		--dark-theme-body: 189, 189, 189;
+
+		--coffee-theme-primary: 252, 248, 232;
+		--coffee-theme-body: 120, 110, 131;
+
+		--color-primary: var(--light-theme-primary);
+		--color-body: var(--light-theme-body);
+	}
+
+	.light {
+		--color-primary: var(--light-theme-primary);
+		--color-body: var(--light-theme-body);
+	}
+
+	.dark {
+		--color-primary: var(--dark-theme-primary);
+		--color-body: var(--dark-theme-body);
+	}
+
+	.coffee {
+		--color-primary: var(--coffee-theme-primary);
+		--color-body: var(--coffee-theme-body);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-body truncate;
+	}
+}

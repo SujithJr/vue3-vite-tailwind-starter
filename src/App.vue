@@ -1,20 +1,44 @@
 <template>
-    <div class="h-screen text-center pt-32 bg-gray-900">
+    <div class="bg-primary h-screen pt-32 text-center">
         <img src="./assets/logo.png" alt="Vue" class="inline-block" />
-        <h1 class="text-4xl text-gray-400 font-medium mt-8">Vue + Vite + TailwindCss</h1>
+        <h1 class="text-body mt-8 mb-8 text-4xl font-medium">Vue — Vite — TailwindCss — Theme Switcher</h1>
+        <div class="bg-primary inline-flex items-center justify-center p-1 border border-gray-300 rounded-lg shadow-xl">
+            <button
+                @click="toggleTheme('light')"
+                class="px-4 py-2 rounded-md"
+                :class="[
+                    { 'bg-body text-primary': currentTheme === 'light' },
+                    { 'text-zinc-500': currentTheme !== 'light' },
+                ]"
+            >
+                Light Theme
+            </button>
+            <button
+                @click="toggleTheme('dark')"
+                class="px-4 py-2 rounded-md"
+                :class="[
+                    { 'bg-body text-primary': currentTheme === 'dark' },
+                    { 'text-zinc-500': currentTheme !== 'dark' },
+                ]"
+            >
+                Dark Theme
+            </button>
+            <button
+                @click="toggleTheme('coffee')"
+                class="px-4 py-2 rounded-md"
+                :class="[
+                    { 'bg-body text-primary': currentTheme === 'coffee' },
+                    { 'text-zinc-500': currentTheme !== 'coffee' },
+                ]"
+            >
+                Coffee Theme
+            </button>
+        </div>
     </div>
 </template>
 
 <script setup>
-    // This starter template is using Vue 3 <script setup> SFCs
-    // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-</script>
+import useThemeSwitcher from './composables/useThemeSwitcher'
 
-<style>
-    #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-    }
-</style>
+const { currentTheme, toggleTheme } = useThemeSwitcher()
+</script>
