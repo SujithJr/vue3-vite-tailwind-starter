@@ -1,32 +1,45 @@
 import { ref, onMounted } from 'vue'
 
 export default function useThemeSwitcher () {
-    const themes = ['light', 'dark', 'coffee']
-    const currentTheme = ref(localStorage.getItem('theme') || 'light')
+    const themes = { light: 'light', dark: 'dark', coffee: 'coffee' }
+    const currentTheme = ref(localStorage.getItem('theme'))
 
     onMounted(() => {
-        themes.forEach(theme => document.documentElement.classList.remove(theme))
+        resetThemeSelection()
 
-        document.documentElement.classList.add(localStorage.getItem('theme'))
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            themes.forEach(theme => document.documentElement.classList.remove(theme))
-            document.documentElement.classList.add('dark')
+        if (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            currentTheme.value = themes.dark
+            switchTheme(themes.dark)
+
             return true
         }
 
-        document.documentElement.classList.add('light')
+        if ('theme' in localStorage) {
+            return switchTheme(localStorage.getItem('theme'))
+        }
+
+        switchTheme(themes.light)
     })
 
-    const toggleTheme = (themeValue) => {
-        currentTheme.value = themeValue || 'light'
+    const toggleTheme = (theme) => {
+        currentTheme.value = theme || themes.light
         localStorage.setItem('theme', currentTheme.value)
 
-        themes.forEach(theme => document.documentElement.classList.remove(theme))
-        document.documentElement.classList.add(currentTheme.value)
+        resetThemeSelection()
+        switchTheme(currentTheme.value)
+    }
+
+    const resetThemeSelection = () => {
+        Object.keys(themes).forEach(theme => document.documentElement.classList.remove(theme))
+    }
+
+    const switchTheme = (theme) => {
+        document.documentElement.classList.add(theme)
     }
 
     return {
         toggleTheme,
-        currentTheme
+        currentTheme,
+        themes
     }
 }

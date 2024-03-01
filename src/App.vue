@@ -2,33 +2,34 @@
     <div class="bg-primary h-screen pt-32 text-center">
         <img src="./assets/logo.png" alt="Vue" class="inline-block" />
         <h1 class="text-body mt-8 mb-8 text-4xl font-medium">Vue — Vite — TailwindCss — Theme Switcher</h1>
+
         <div class="bg-primary inline-flex items-center justify-center p-1 border border-gray-300 rounded-lg shadow-xl">
             <button
-                @click="toggleTheme('light')"
+                @click="toggleTheme(themes.light)"
                 class="px-4 py-2 rounded-md"
                 :class="[
-                    { 'bg-body text-primary': currentTheme === 'light' },
-                    { 'text-zinc-500': currentTheme !== 'light' },
+                    { 'bg-body text-primary': currentTheme === themes.light },
+                    { 'text-zinc-500': currentTheme !== themes.light },
                 ]"
             >
                 Light Theme
             </button>
             <button
-                @click="toggleTheme('dark')"
+                @click="toggleTheme(themes.dark)"
                 class="px-4 py-2 rounded-md"
                 :class="[
-                    { 'bg-body text-primary': currentTheme === 'dark' },
-                    { 'text-zinc-500': currentTheme !== 'dark' },
+                    { 'bg-body text-primary': currentTheme === themes.dark },
+                    { 'text-zinc-500': currentTheme !== themes.dark },
                 ]"
             >
                 Dark Theme
             </button>
             <button
-                @click="toggleTheme('coffee')"
+                @click="toggleTheme(themes.coffee)"
                 class="px-4 py-2 rounded-md"
                 :class="[
-                    { 'bg-body text-primary': currentTheme === 'coffee' },
-                    { 'text-zinc-500': currentTheme !== 'coffee' },
+                    { 'bg-body text-primary': currentTheme === themes.coffee },
+                    { 'text-zinc-500': currentTheme !== themes.coffee },
                 ]"
             >
                 Coffee Theme
@@ -40,5 +41,5 @@
 <script setup>
 import useThemeSwitcher from './composables/useThemeSwitcher'
 
-const { currentTheme, toggleTheme } = useThemeSwitcher()
+const { currentTheme, toggleTheme, themes } = useThemeSwitcher()
 </script>
