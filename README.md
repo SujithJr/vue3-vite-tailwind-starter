@@ -44,6 +44,7 @@ No need to mention `dark:text-gray-100` class in every place to support tailwind
 
 `tailwind.config.js`
 ```js
+darkMode: 'class',
 theme: {
     ...
     extend: {
